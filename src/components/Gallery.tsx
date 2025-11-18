@@ -16,6 +16,7 @@ const Gallery = () => {
     { id: 1, title: "Master Plan", category: "Blueprint", image: new URL("@/assets/blueprint1.png", import.meta.url).href },
     { id: 2, title: "Floor Layout", category: "Blueprint", image: new URL("@/assets/blueprint2.png", import.meta.url).href },
     { id: 3, title: "Technical Design", category: "Blueprint", image: new URL("@/assets/blueprint3.png", import.meta.url).href },
+    { id: 4, title: "Structural Plan", category: "Blueprint", image: new URL("@/assets/blueprint4.png", import.meta.url).href },
   ];
 
   return (
@@ -88,7 +89,7 @@ const Gallery = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {blueprintImages.map((blueprint, index) => (
               <Card
                 key={blueprint.id}
@@ -99,7 +100,7 @@ const Gallery = () => {
                   <img 
                     src={blueprint.image} 
                     alt={blueprint.title}
-                    className="absolute inset-0 w-full h-full object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-accent/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
