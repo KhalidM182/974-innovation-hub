@@ -1,5 +1,5 @@
 import { Recycle, Building2, Sparkles } from "lucide-react";
-import innovationSpace from "@/assets/innovation-space.jpg";
+import innovationSpace from "@/assets/innovation-space.png";
 
 const About = () => {
   return (

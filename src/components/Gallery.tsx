@@ -1,14 +1,14 @@
 import { Card } from "@/components/ui/card";
 
 const Gallery = () => {
-  // Placeholder for user images
+  // Gallery images from assets
   const galleryImages = [
-    { id: 1, title: "Main Building", category: "Architecture" },
-    { id: 2, title: "Innovation Lab", category: "Facilities" },
-    { id: 3, title: "Collaborative Space", category: "Interior" },
-    { id: 4, title: "Event Hall", category: "Venues" },
-    { id: 5, title: "Sustainable Design", category: "Architecture" },
-    { id: 6, title: "Community Area", category: "Interior" },
+    { id: 1, title: "Main Building", category: "Architecture", image: new URL("@/assets/image1.png", import.meta.url).href },
+    { id: 2, title: "Innovation Lab", category: "Facilities", image: new URL("@/assets/image2.png", import.meta.url).href },
+    { id: 3, title: "Collaborative Space", category: "Interior", image: new URL("@/assets/image3.png", import.meta.url).href },
+    { id: 4, title: "Event Hall", category: "Venues", image: new URL("@/assets/image4.png", import.meta.url).href },
+    { id: 5, title: "Sustainable Design", category: "Architecture", image: new URL("@/assets/image5.png", import.meta.url).href },
+    { id: 6, title: "Community Area", category: "Interior", image: new URL("@/assets/image.png", import.meta.url).href },
   ];
 
   return (
@@ -35,14 +35,13 @@ const Gallery = () => {
               className="group overflow-hidden cursor-pointer hover:shadow-strong transition-all duration-300 animate-scale-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="aspect-[4/3] bg-gradient-to-br from-primary/20 to-accent/20 relative overflow-hidden">
-                {/* Placeholder for user images */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <div className="text-4xl font-bold text-primary/40 mb-2">{image.id}</div>
-                    <div className="text-sm text-muted-foreground">Your image here</div>
-                  </div>
-                </div>
+              <div className="aspect-[4/3] relative overflow-hidden">
+                {/* Gallery image */}
+                <img 
+                  src={image.image} 
+                  alt={image.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                   <div className="p-6 w-full">
@@ -63,7 +62,7 @@ const Gallery = () => {
         <div className="mt-12 text-center">
           <div className="inline-block p-6 bg-card rounded-xl border border-border shadow-soft">
             <p className="text-muted-foreground">
-              <strong className="text-foreground">Note:</strong> The gallery currently shows placeholders. Replace these with your actual project images to showcase the 974 Innovation Hub.
+              Explore our state-of-the-art facilities designed to foster innovation and collaboration.
             </p>
           </div>
         </div>

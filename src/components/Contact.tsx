@@ -148,7 +148,7 @@ const Contact = () => {
                     <h4 className="font-semibold text-foreground mb-1">Location</h4>
                     <p className="text-muted-foreground">
                       Former Stadium 974 Site<br />
-                      Ras Abu Aboud, Doha, Qatar
+                      Lusail, Doha, Qatar
                     </p>
                   </div>
                 </CardContent>
