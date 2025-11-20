@@ -89,14 +89,14 @@ const Gallery = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
             {blueprintImages.map((blueprint, index) => (
               <Card
                 key={blueprint.id}
                 className="group overflow-hidden cursor-pointer hover:shadow-strong transition-all duration-300 animate-scale-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="aspect-[4/3] relative overflow-hidden bg-slate-50 dark:bg-slate-900">
+                <div className="aspect-square relative overflow-hidden bg-slate-50 dark:bg-slate-900">
                   <img 
                     src={blueprint.image} 
                     alt={blueprint.title}

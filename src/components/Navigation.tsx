@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { CompanyRegistrationDrawer } from "@/components/CompanyRegistrationDrawer";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -56,9 +57,7 @@ const Navigation = () => {
             >
               Gallery
             </button>
-            <Button onClick={() => scrollToSection("contact")} className="bg-primary hover:bg-primary-dark text-primary-foreground">
-              Get in Touch
-            </Button>
+            <CompanyRegistrationDrawer />
           </div>
 
           {/* Mobile Menu Button */}
@@ -103,9 +102,13 @@ const Navigation = () => {
             >
               Gallery
             </button>
-            <Button onClick={() => scrollToSection("contact")} className="w-full bg-primary hover:bg-primary-dark text-primary-foreground">
-              Get in Touch
-            </Button>
+            <div className="px-4">
+              <CompanyRegistrationDrawer>
+                <Button className="w-full bg-primary hover:bg-primary-dark text-primary-foreground">
+                  Register Your Company
+                </Button>
+              </CompanyRegistrationDrawer>
+            </div>
           </div>
         )}
       </div>
