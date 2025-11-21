@@ -2,6 +2,9 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Features from "@/components/Features";
+import Partners from "@/components/Partners";
+import KeyOperations from "@/components/KeyOperations";
+import ProjectPhases from "@/components/ProjectPhases";
 import Vision from "@/components/Vision";
 import Gallery from "@/components/Gallery";
 import Contact from "@/components/Contact";
@@ -14,6 +17,9 @@ const Index = () => {
       <Hero />
       <About />
       <Features />
+      <Partners />
+      <KeyOperations />
+      <ProjectPhases />
       <Vision />
       <Gallery />
       <Contact />
