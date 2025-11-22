@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 const Gallery = () => {
   // Gallery images from assets
   const galleryImages = [
-    { id: 1, title: "Main Building", category: "Architecture", image: new URL("@/assets/image1.png", import.meta.url).href },
+    { id: 1, title: "Main Building", category: "Architecture", image: new URL("@/assets/hero-building.png", import.meta.url).href },
     { id: 2, title: "Innovation Lab", category: "Facilities", image: new URL("@/assets/image2.png", import.meta.url).href },
     { id: 3, title: "Collaborative Space", category: "Main Hub", image: new URL("@/assets/image3.png", import.meta.url).href },
     { id: 4, title: "Event Hall", category: "Venues", image: new URL("@/assets/image4.png", import.meta.url).href },
