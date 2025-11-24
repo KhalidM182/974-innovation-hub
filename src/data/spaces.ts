@@ -3,68 +3,68 @@ import { Space } from '@/types/spaces';
 export const spaces: Space[] = [
   {
     id: '1',
-    name: 'Innovation Coworking Space',
+    name: 'Container Co-Work Hub',
     type: 'coworking',
-    capacity: 50,
+    capacity: 20,
     pricePerHour: 15,
     pricePerDay: 100,
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
-    amenities: ['High-Speed WiFi', 'Coffee Bar', 'Meeting Rooms', 'Printing Services'],
-    description: 'Modern coworking space perfect for startups and freelancers. Features ergonomic furniture and collaborative areas.'
+    image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80',
+    amenities: ['High-Speed WiFi', 'Climate Control', 'Standing Desks', '974 Stadium View'],
+    description: 'Converted shipping container coworking space at 974 Stadium. Industrial-chic design with modern amenities for startups and entrepreneurs.'
   },
   {
     id: '2',
-    name: 'Tech Training Hall',
+    name: 'Stadium Container Training Center',
     type: 'training-hall',
-    capacity: 30,
+    capacity: 25,
     pricePerHour: 50,
     pricePerDay: 350,
-    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80',
-    amenities: ['Projector', 'Whiteboard', 'Video Conferencing', 'AV Equipment'],
-    description: 'Fully equipped training hall with state-of-the-art presentation tools and comfortable seating.'
+    image: 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=800&q=80',
+    amenities: ['Smart Screen', 'Whiteboard Walls', 'Video Setup', 'Stadium Architecture'],
+    description: 'Upcycled shipping container training hall featuring the iconic 974 Stadium aesthetic. Perfect for workshops and tech training sessions.'
   },
   {
     id: '3',
-    name: 'Grand Event Venue',
+    name: '974 Container Event Arena',
     type: 'event-venue',
-    capacity: 200,
+    capacity: 150,
     pricePerHour: 150,
     pricePerDay: 1000,
-    image: 'https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=800&q=80',
-    amenities: ['Stage', 'Sound System', 'Lighting', 'Catering Area', 'Parking'],
-    description: 'Large venue ideal for conferences, product launches, and major networking events.'
+    image: 'https://images.unsplash.com/photo-1464207687429-7505649dae38?auto=format&fit=crop&w=800&q=80',
+    amenities: ['Modular Stage', 'Sound System', 'LED Lighting', 'Outdoor Terrace', 'Stadium Views'],
+    description: 'Multi-container event space inspired by 974 Stadium\'s sustainable design. Ideal for product launches, conferences, and innovation showcases.'
   },
   {
     id: '4',
-    name: 'Creative Studio',
+    name: 'Startup Container Pod',
     type: 'coworking',
-    capacity: 20,
+    capacity: 12,
     pricePerHour: 20,
     pricePerDay: 140,
-    image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80',
-    amenities: ['Natural Light', 'Design Tools', 'Photo Area', 'Coffee'],
-    description: 'Bright and inspiring space for creative teams and designers.'
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80',
+    amenities: ['Private WiFi', 'Glass Walls', 'Lounge Area', 'Mini Kitchenette'],
+    description: 'Intimate shipping container workspace at the 974 hub. Features industrial design with floor-to-ceiling windows for natural light.'
   },
   {
     id: '5',
-    name: 'Workshop Hall',
+    name: 'Innovation Container Lab',
     type: 'training-hall',
-    capacity: 25,
+    capacity: 20,
     pricePerHour: 40,
     pricePerDay: 280,
-    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80',
-    amenities: ['Tables', 'Flipcharts', 'WiFi', 'Breakout Areas'],
-    description: 'Perfect for hands-on workshops and interactive training sessions.'
+    image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80',
+    amenities: ['Tech Equipment', 'Collaboration Tools', 'WiFi', '974 Theme Decor'],
+    description: 'Repurposed shipping container designed for hands-on innovation workshops. Embodies the spirit of 974 Stadium\'s sustainable architecture.'
   },
   {
     id: '6',
-    name: 'Premium Event Space',
+    name: 'Container Esports Arena',
     type: 'event-venue',
-    capacity: 100,
+    capacity: 80,
     pricePerHour: 100,
     pricePerDay: 700,
-    image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80',
-    amenities: ['AV System', 'Stage', 'Green Room', 'Reception Area'],
-    description: 'Elegant venue for corporate events, seminars, and celebrations.'
+    image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80',
+    amenities: ['Gaming Stations', 'Streaming Setup', 'LED Screens', 'Audience Seating'],
+    description: 'Container-based esports and gaming venue at 974 Hub. Modern gaming infrastructure within sustainable shipping container architecture.'
   }
 ];

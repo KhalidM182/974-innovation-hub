@@ -27,9 +27,9 @@ export default function Spaces() {
       {/* Header */}
       <section className="py-20 px-4 bg-gradient-to-b from-primary/10 to-background">
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Book Your Space</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Book a Container Space</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Browse and book coworking spaces, training halls, and event venues for your innovation needs
+            Experience innovation in repurposed 974 Stadium shipping containers - sustainable workspaces, training halls, and event venues
           </p>
         </div>
       </section>
@@ -39,8 +39,8 @@ export default function Spaces() {
         <div className="container mx-auto">
           <Tabs value={filterType} onValueChange={(value: any) => setFilterType(value)}>
             <TabsList className="grid w-full max-w-md mx-auto grid-cols-4">
-              <TabsTrigger value="all">All Spaces</TabsTrigger>
-              <TabsTrigger value="coworking">Coworking</TabsTrigger>
+              <TabsTrigger value="all">All Containers</TabsTrigger>
+              <TabsTrigger value="coworking">Co-Work</TabsTrigger>
               <TabsTrigger value="training-hall">Training</TabsTrigger>
               <TabsTrigger value="event-venue">Events</TabsTrigger>
             </TabsList>
@@ -112,7 +112,7 @@ export default function Spaces() {
 
           {filteredSpaces.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-muted-foreground">No spaces found in this category.</p>
+              <p className="text-muted-foreground">No container spaces found in this category.</p>
             </div>
           )}
         </div>
