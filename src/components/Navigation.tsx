@@ -2,9 +2,11 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { CompanyRegistrationDrawer } from "@/components/CompanyRegistrationDrawer";
+import { useNavigate } from "react-router-dom";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -57,6 +59,12 @@ const Navigation = () => {
             >
               Gallery
             </button>
+            <button
+              onClick={() => navigate("/spaces")}
+              className="text-foreground hover:text-primary transition-colors font-semibold"
+            >
+              Book Spaces
+            </button>
             <CompanyRegistrationDrawer />
           </div>
 
@@ -101,6 +109,12 @@ const Navigation = () => {
               className="block w-full text-left px-4 py-2 text-foreground hover:text-primary transition-colors"
             >
               Gallery
+            </button>
+            <button
+              onClick={() => { navigate("/spaces"); setIsMenuOpen(false); }}
+              className="block w-full text-left px-4 py-2 text-foreground hover:text-primary transition-colors font-semibold"
+            >
+              Book Spaces
             </button>
             <div className="px-4">
               <CompanyRegistrationDrawer>
