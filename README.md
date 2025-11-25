@@ -1,6 +1,6 @@
-# 974 Innovation Hub Website
+# 974 Innovation Hub Website (CMPS307 Project)
 
-This is a prototype website for the **974 Innovation Hub**, a project that repurposes Stadium 974 into a sustainable innovation and entrepreneurship hub in Qatar. :contentReference[oaicite:0]{index=0}  
+This is a prototype website for the **974 Innovation Hub**, a project that repurposes Stadium 974 into a sustainable innovation and entrepreneurship hub in Qatar.  
 
 The site is part of a course project to demonistarte the project.
 
