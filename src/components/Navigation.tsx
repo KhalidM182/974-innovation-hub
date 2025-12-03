@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { CompanyRegistrationDrawer } from "@/components/CompanyRegistrationDrawer";
+import { useNavigate } from "react-router-dom";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -51,14 +54,24 @@ const Navigation = () => {
               Vision
             </button>
             <button
+              onClick={() => scrollToSection("timeline")}
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Timeline
+            </button>
+            <button
               onClick={() => scrollToSection("gallery")}
               className="text-foreground hover:text-primary transition-colors"
             >
               Gallery
             </button>
-            <Button onClick={() => scrollToSection("contact")} className="bg-primary hover:bg-primary-dark text-primary-foreground">
-              Get in Touch
-            </Button>
+            <button
+              onClick={() => navigate("/spaces")}
+              className="text-foreground hover:text-primary transition-colors font-semibold"
+            >
+              Book Spaces
+            </button>
+            <CompanyRegistrationDrawer />
           </div>
 
           {/* Mobile Menu Button */}
@@ -98,14 +111,30 @@ const Navigation = () => {
               Vision
             </button>
             <button
+              onClick={() => scrollToSection("timeline")}
+              className="block w-full text-left px-4 py-2 text-foreground hover:text-primary transition-colors"
+            >
+              Timeline
+            </button>
+            <button
               onClick={() => scrollToSection("gallery")}
               className="block w-full text-left px-4 py-2 text-foreground hover:text-primary transition-colors"
             >
               Gallery
             </button>
-            <Button onClick={() => scrollToSection("contact")} className="w-full bg-primary hover:bg-primary-dark text-primary-foreground">
-              Get in Touch
-            </Button>
+            <button
+              onClick={() => { navigate("/spaces"); setIsMenuOpen(false); }}
+              className="block w-full text-left px-4 py-2 text-foreground hover:text-primary transition-colors font-semibold"
+            >
+              Book Spaces
+            </button>
+            <div className="px-4">
+              <CompanyRegistrationDrawer>
+                <Button className="w-full bg-primary hover:bg-primary-dark text-primary-foreground">
+                  Register Your Company
+                </Button>
+              </CompanyRegistrationDrawer>
+            </div>
           </div>
         )}
       </div>
