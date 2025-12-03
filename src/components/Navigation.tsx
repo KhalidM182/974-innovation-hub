@@ -51,6 +51,12 @@ const Navigation = () => {
               Vision
             </button>
             <button
+              onClick={() => scrollToSection("timeline")}
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Timeline
+            </button>
+            <button
               onClick={() => scrollToSection("gallery")}
               className="text-foreground hover:text-primary transition-colors"
             >
@@ -96,6 +102,12 @@ const Navigation = () => {
               className="block w-full text-left px-4 py-2 text-foreground hover:text-primary transition-colors"
             >
               Vision
+            </button>
+            <button
+              onClick={() => scrollToSection("timeline")}
+              className="block w-full text-left px-4 py-2 text-foreground hover:text-primary transition-colors"
+            >
+              Timeline
             </button>
             <button
               onClick={() => scrollToSection("gallery")}
