@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 const Gallery = () => {
   // Gallery images from assets
   const galleryImages = [
-    { id: 1, title: "Main Building", category: "Architecture", image: new URL("@/assets/image1.png", import.meta.url).href },
+    { id: 1, title: "Main Building", category: "Architecture", image: new URL("@/assets/hero-building.png", import.meta.url).href },
     { id: 2, title: "Innovation Lab", category: "Facilities", image: new URL("@/assets/image2.png", import.meta.url).href },
     { id: 3, title: "Collaborative Space", category: "Main Hub", image: new URL("@/assets/image3.png", import.meta.url).href },
     { id: 4, title: "Event Hall", category: "Venues", image: new URL("@/assets/image4.png", import.meta.url).href },
@@ -89,14 +89,14 @@ const Gallery = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
             {blueprintImages.map((blueprint, index) => (
               <Card
                 key={blueprint.id}
                 className="group overflow-hidden cursor-pointer hover:shadow-strong transition-all duration-300 animate-scale-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="aspect-[4/3] relative overflow-hidden bg-slate-50 dark:bg-slate-900">
+                <div className="aspect-square relative overflow-hidden bg-slate-50 dark:bg-slate-900">
                   <img 
                     src={blueprint.image} 
                     alt={blueprint.title}

@@ -15,10 +15,16 @@ const About = () => {
               From World Cup Legacy to Innovation Powerhouse
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              The 974 Innovation Hub represents a groundbreaking approach to sustainable development. By repurposing the modular Stadium 974 from the FIFA World Cup 2022, we've created a dynamic space that honors the past while building the future.
+              The 974 Innovation Hub repurposes shipping containers from Stadium 974 into flexible modules for:
             </p>
+            <ul className="text-lg text-muted-foreground leading-relaxed space-y-2 list-disc list-inside ml-4">
+              <li>Startups and co-working spaces</li>
+              <li>Training and conference halls</li>
+              <li>Event and exhibition venues</li>
+              <li>Cultural and esports events</li>
+            </ul>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Our hub serves as a catalyst for innovation, bringing together entrepreneurs, startups, corporations, and community members in a collaborative environment designed to foster creativity and drive meaningful change.
+              The hub serves as a living example of sustainable legacy reuse, merging sports heritage with innovation and creativity.
             </p>
 
             {/* Stats */}
