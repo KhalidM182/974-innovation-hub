@@ -5,18 +5,29 @@ export interface Space {
   capacity: number;
   pricePerHour: number;
   pricePerDay: number;
-  image: string;
+  icon: string;
   amenities: string[];
   description: string;
 }
 
+export interface Company {
+  id: string;
+  name: string;
+  email: string;
+  phone?: string;
+  industry?: string;
+  created_at: string;
+}
+
 export interface Booking {
   id: string;
-  spaceId: string;
-  spaceName: string;
-  date: Date;
-  duration: number;
-  totalPrice: number;
-  userName: string;
-  userEmail: string;
+  company_id: string;
+  space_id: string;
+  space_name: string;
+  booking_date: string;
+  duration_type: 'hourly' | 'daily';
+  hours?: number;
+  total_price: number;
+  status: 'pending' | 'approved' | 'rejected';
+  created_at: string;
 }
