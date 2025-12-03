@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { spaces } from '@/data/spaces';
 import { Space } from '@/types/spaces';
 import { BookingDialog } from '@/components/BookingDialog';
@@ -7,7 +8,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Users, Clock, Calendar, Laptop, GraduationCap, Rocket, Lightbulb, Gamepad2, Building2, CheckCircle } from 'lucide-react';
+import { Users, Clock, Calendar, Laptop, GraduationCap, Rocket, Lightbulb, Gamepad2, Building2, CheckCircle, ArrowLeft, ClipboardList } from 'lucide-react';
 import { useCompany } from '@/hooks/useCompany';
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -50,29 +51,48 @@ export default function Spaces() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <section className="py-20 px-4 bg-gradient-to-b from-primary/10 to-background">
-        <div className="container mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Book a Container Space</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6">
-            Experience innovation in repurposed 974 Stadium shipping containers - sustainable workspaces, training halls, and event venues
-          </p>
+      <section className="py-12 px-4 bg-gradient-to-b from-primary/10 to-background">
+        <div className="container mx-auto">
+          <div className="flex justify-between items-center mb-6">
+            <Link to="/">
+              <Button variant="ghost">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back to Home
+              </Button>
+            </Link>
+            {company && (
+              <Link to="/my-bookings">
+                <Button variant="outline">
+                  <ClipboardList className="w-4 h-4 mr-2" />
+                  My Bookings
+                </Button>
+              </Link>
+            )}
+          </div>
           
-          {/* Company Status */}
-          {!loading && (
-            <div className="flex justify-center items-center gap-2 mt-4">
-              {company ? (
-                <Badge variant="secondary" className="text-sm py-2 px-4">
-                  <CheckCircle className="w-4 h-4 mr-2" />
-                  Registered as: {company.name}
-                </Badge>
-              ) : (
-                <Badge variant="outline" className="text-sm py-2 px-4">
-                  <Building2 className="w-4 h-4 mr-2" />
-                  Register your company to book spaces
-                </Badge>
-              )}
-            </div>
-          )}
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Book a Container Space</h1>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6">
+              Experience innovation in repurposed 974 Stadium shipping containers - sustainable workspaces, training halls, and event venues
+            </p>
+            
+            {/* Company Status */}
+            {!loading && (
+              <div className="flex justify-center items-center gap-2 mt-4">
+                {company ? (
+                  <Badge variant="secondary" className="text-sm py-2 px-4">
+                    <CheckCircle className="w-4 h-4 mr-2" />
+                    Registered as: {company.name}
+                  </Badge>
+                ) : (
+                  <Badge variant="outline" className="text-sm py-2 px-4">
+                    <Building2 className="w-4 h-4 mr-2" />
+                    Register your company to book spaces
+                  </Badge>
+                )}
+              </div>
+            )}
+          </div>
         </div>
       </section>
 
