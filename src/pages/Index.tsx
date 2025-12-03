@@ -6,7 +6,6 @@ import Partners from "@/components/Partners";
 import KeyOperations from "@/components/KeyOperations";
 import ProjectPhases from "@/components/ProjectPhases";
 import Vision from "@/components/Vision";
-import Timeline from "@/components/Timeline";
 import Gallery from "@/components/Gallery";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -22,7 +21,6 @@ const Index = () => {
       <KeyOperations />
       <ProjectPhases />
       <Vision />
-      <Timeline />
       <Gallery />
       <Contact />
       <Footer />
