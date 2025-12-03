@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -24,7 +24,34 @@ export function BookingDialog({ space, company, open, onOpenChange }: BookingDia
   const [hours, setHours] = useState(1);
   const [loading, setLoading] = useState(false);
   const [bookingComplete, setBookingComplete] = useState(false);
+  const [bookedDates, setBookedDates] = useState<string[]>([]);
   const { toast } = useToast();
+
+  // Fetch existing bookings for this space
+  useEffect(() => {
+    if (open && space) {
+      fetchBookedDates();
+    }
+  }, [open, space]);
+
+  const fetchBookedDates = async () => {
+    if (!space) return;
+    
+    try {
+      const { data, error } = await supabase
+        .from('bookings')
+        .select('booking_date')
+        .eq('space_id', space.id)
+        .in('status', ['pending', 'approved']);
+
+      if (error) throw error;
+
+      const dates = data.map(booking => booking.booking_date);
+      setBookedDates(dates);
+    } catch (error) {
+      console.error('Error fetching booked dates:', error);
+    }
+  };
 
   if (!space || !company) return null;
 
@@ -42,13 +69,25 @@ export function BookingDialog({ space, company, open, onOpenChange }: BookingDia
       return;
     }
 
+    const selectedDateStr = date.toISOString().split('T')[0];
+    
+    // Check if date is already booked
+    if (bookedDates.includes(selectedDateStr)) {
+      toast({
+        title: 'Date Already Booked',
+        description: 'This date is already booked. Please select another date.',
+        variant: 'destructive'
+      });
+      return;
+    }
+
     setLoading(true);
     try {
       const { error } = await supabase.from('bookings').insert({
         company_id: company.id,
         space_id: space.id,
         space_name: space.name,
-        booking_date: date.toISOString().split('T')[0],
+        booking_date: selectedDateStr,
         duration_type: durationType,
         hours: durationType === 'hourly' ? hours : null,
         total_price: totalPrice,
@@ -137,9 +176,17 @@ export function BookingDialog({ space, company, open, onOpenChange }: BookingDia
               mode="single"
               selected={date}
               onSelect={setDate}
-              disabled={(date) => date < new Date()}
+              disabled={(date) => {
+                const dateStr = date.toISOString().split('T')[0];
+                return date < new Date() || bookedDates.includes(dateStr);
+              }}
               className="rounded-md border"
             />
+            {bookedDates.length > 0 && (
+              <p className="text-xs text-muted-foreground mt-2">
+                Already booked dates are disabled
+              </p>
+            )}
           </div>
 
           {/* Duration Type */}
